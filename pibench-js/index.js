@@ -21,7 +21,7 @@ function approximate_pi(n) {
 }
 
 module.exports = function (context, req) {
-    const almost_pi = approximate_pi(100000000);
+    const almost_pi = approximate_pi(10000000);
     context.log(almost_pi);
 
     context.res = {
