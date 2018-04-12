@@ -1,0 +1,1 @@
+# Running Rust code within the Azure Functions runtime using WebAssembly.
