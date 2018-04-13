@@ -1,4 +1,4 @@
-const rust = require("./pibench-rs/wasm_pibench.js"); 
+const rust = require("pibench-rs\wasm_pibench.js"); 
 
 module.exports = function (context, req) {
     context.log(process.versions);
