@@ -18,7 +18,7 @@ function in_unit_circle(x, y) {
 function approximate_pi(n) {
   let hits = monte_carlo_pi(n);
   return hits / n * 4.0;
-}
+} 
 
 module.exports = function (context, req) {
     const almost_pi = approximate_pi(10000000);
