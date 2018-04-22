@@ -1,18 +1,19 @@
 #![feature(proc_macro, wasm_custom_section, wasm_import_module)]
-extern crate rand;
 extern crate wasm_bindgen;
 
-use rand::Rng;
 use wasm_bindgen::prelude::*;
 
+#[wasm_bindgen]
+extern {
+  fn random() -> f64;
+}
 
-fn monte_carlo_pi(reps: u64) -> u64 {
+fn monte_carlo_pi(reps: u32) -> u64 {
     let mut count = 0;
-    let mut rng = rand::thread_rng();
 
     for _ in 0..reps {
-        let x = rng.gen::<f64>();
-        let y = rng.gen::<f64>();
+        let x = random();
+        let y = random();
 
         if in_unit_circle(x, y) {
             count += 1;
@@ -27,7 +28,7 @@ fn in_unit_circle(x: f64, y: f64) -> bool {
 }
 
 #[wasm_bindgen]
-pub fn approximate_pi(n: u64) -> f64 {
+pub fn approximate_pi(n: u32) -> f64 {
     let hits = monte_carlo_pi(n);
     hits as f64 / n as f64 * 4.0
 }
