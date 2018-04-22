@@ -1,1 +1,6 @@
-{}
+{
+    "http": {
+        "routePrefix": "api",
+        "maxConcurrentRequests": 25,
+    }
+}
