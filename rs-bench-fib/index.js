@@ -1,13 +1,11 @@
 const rust = require("./wasm_pibench.js"); 
 
 module.exports = function (context, req) {
-    context.log(process.versions);
-    const almost_pi = rust.approximate_pi(10000000);
-    context.log(almost_pi);
-
+    const fibonacci = rust.run_fibonacci_test(43);
+    console.log(fibonacci);
     context.res = {
         status: 200,
-        body: `${almost_pi}`
+        body: `${fibonacci}`
     };
     context.done();
 };

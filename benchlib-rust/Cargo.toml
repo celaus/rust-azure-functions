@@ -1,10 +1,11 @@
 [package]
 name = "wasm-pibench"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Claus Matzinger <claus.matzinger+kb@gmail.com>"]
 
 [lib] 
 crate-type = ["cdylib"] 
 
 [dependencies] 
-wasm-bindgen = "0.2"
+wasm-bindgen = "^0.2"
+#rand = { version = "0.5", features = ["stdweb"] }
